@@ -37,14 +37,12 @@ class _CounterAppState extends State<CounterApp> {
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
-          // Decrease button
           FloatingActionButton(
             onPressed: _decrementCounter,
             tooltip: 'Decrement',
             child: Icon(Icons.remove),
           ),
           SizedBox(width: 10),
-          // Increase button
           FloatingActionButton(
             onPressed: _incrementCounter,
             tooltip: 'Increment',
