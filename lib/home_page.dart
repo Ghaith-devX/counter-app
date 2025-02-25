@@ -10,18 +10,6 @@ class CounterApp extends StatefulWidget {
 class _CounterAppState extends State<CounterApp> {
   int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  void _decrementCounter() {
-    setState(() {
-      _counter--;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,19 +25,37 @@ class _CounterAppState extends State<CounterApp> {
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
-          FloatingActionButton(
-            onPressed: _decrementCounter,
-            tooltip: 'Decrement',
-            child: Icon(Icons.remove),
-          ),
+          floatingActionButtonMethod(),
           SizedBox(width: 10),
-          FloatingActionButton(
-            onPressed: _incrementCounter,
-            tooltip: 'Increment',
-            child: Icon(Icons.add),
-          ),
+          floatingActionButtonMethodTwo(),
         ],
       ),
+    );
+  }
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  void _decrementCounter() {
+    setState(() {
+      _counter--;
+    });
+  }
+
+  FloatingActionButton floatingActionButtonMethodTwo() {
+    return FloatingActionButton(
+      onPressed: _incrementCounter,
+      child: Icon(Icons.add),
+    );
+  }
+
+  FloatingActionButton floatingActionButtonMethod() {
+    return FloatingActionButton(
+      onPressed: _decrementCounter,
+      child: Icon(Icons.remove),
     );
   }
 }
