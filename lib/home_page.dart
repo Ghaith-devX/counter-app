@@ -16,12 +16,7 @@ class _CounterAppState extends State<CounterApp> {
       appBar: AppBar(
         title: Text('Flutter Counter App'),
       ),
-      body: Center(
-        child: Text(
-          'Counter: $_counter',
-          style: TextStyle(fontSize: 32),
-        ),
-      ),
+      body: counterWidget(),
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
@@ -29,6 +24,15 @@ class _CounterAppState extends State<CounterApp> {
           SizedBox(width: 10),
           floatingActionButtonMethodTwo(),
         ],
+      ),
+    );
+  }
+
+  Center counterWidget() {
+    return Center(
+      child: Text(
+        'Counter: $_counter',
+        style: TextStyle(fontSize: 32),
       ),
     );
   }
