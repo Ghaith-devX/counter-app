@@ -36,9 +36,9 @@ class _CounterAppState extends State<CounterApp> {
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
-          floatingActionButtonMethod(Icons.add, _incrementCounter),
+          floatingActionButtonMethodAdd(),
           SizedBox(width: 10),
-          floatingActionButtonMethod(Icons.add, _decrementCounter),
+          floatingActionButtonMethodRemove()
         ],
       ),
     );
@@ -65,11 +65,17 @@ class _CounterAppState extends State<CounterApp> {
     });
   }
 
-  FloatingActionButton floatingActionButtonMethod(
-      IconData icon, VoidCallback onPressed) {
+  FloatingActionButton floatingActionButtonMethodAdd() {
     return FloatingActionButton(
-      onPressed: onPressed,
-      child: Icon(icon),
+      onPressed: _incrementCounter,
+      child: Icon(Icons.add),
+    );
+  }
+
+  FloatingActionButton floatingActionButtonMethodRemove() {
+    return FloatingActionButton(
+      onPressed: _decrementCounter,
+      child: Icon(Icons.remove),
     );
   }
 }
